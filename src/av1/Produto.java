@@ -14,11 +14,24 @@ public class Produto {
     private String nome;
     private int preco;
     private int quantidade;
-
-    public Produto(String nome, int preco, int quantidade) {
+    private int cod;
+    
+    public Produto(String nome, int preco, int quantidade, int cod) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+        this.cod = cod;
+    }
+
+    public void printProduto(){
+        System.out.println("************");
+        
+        System.out.println(getCod());
+        System.out.println(getNome());
+        System.out.println(getPreco());
+        System.out.println(getQuantidade());       
+        
+        System.out.println("************");
     }
 
     public String getNome() {
@@ -43,5 +56,13 @@ public class Produto {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 }
