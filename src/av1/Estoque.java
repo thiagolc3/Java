@@ -11,19 +11,9 @@ package av1;
  */
 public class Estoque {
     
-    private int quantidade;
-    
-    public Estoque(Produto produto, int qtd){
-        this.quantidade=qtd;
+    static Produto produto[] = new Produto[10];
+
+    public void novoProduto(int cod, String nome, int preco, int qty){
+            produto[cod] = new Produto(nome, preco, qty);
     }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-
 }
