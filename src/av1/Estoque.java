@@ -17,16 +17,16 @@ public class Estoque {
             produto[cod] = new Produto(nome, preco, qty, cod);
     }
     
-    public int valorEstoque(){
+    public void valorEstoque(){
         int total=0;
 
         for(int i=0; i<10; i++){
             if(produto[i]!=null){
-                total+=produto[i].getQuantidade()*produto[i].getQuantidade();
+                total+=produto[i].getQuantidade()*produto[i].getPreco();
             }
         }
 
-        return total;
+        System.out.println("\nValor total do estoque: "+ total);
     }
     
     public void listaEstoque(){

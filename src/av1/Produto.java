@@ -26,12 +26,12 @@ public class Produto {
     public void printProduto(){
         System.out.println("************");
         
-        System.out.println(getCod());
-        System.out.println(getNome());
-        System.out.println(getPreco());
-        System.out.println(getQuantidade());       
+        System.out.println("código: " + getCod());
+        System.out.println("nome: " + getNome());
+        System.out.println("preço: " + getPreco());
+        System.out.println("quantidade: " + getQuantidade());       
         
-        System.out.println("************");
+        //System.out.println("************");
     }
 
     public String getNome() {
