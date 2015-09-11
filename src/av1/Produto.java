@@ -5,7 +5,6 @@
  */
 package av1;
 
-
 /**
  *
  * @author lsfo
@@ -13,7 +12,7 @@ package av1;
 public class Produto {
     
     private String nome;
-    private int preço;
+    private int preco;
 
     public String getNome() {
         return nome;
@@ -23,12 +22,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getPreço() {
-        return preço;
+    public int getPreco() {
+        return preco;
     }
 
-    public void setPreço(int preço) {
-        this.preço = preço;
+    public void setPreco(int preco) {
+        this.preco = preco;
     }
 
 }
