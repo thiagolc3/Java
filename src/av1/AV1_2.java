@@ -52,24 +52,42 @@ public class AV1_2 {
     }
 
     private static void incluirConta(){
-        System.out.print("Insira o número da conta (0-9): ");
-        int num = tecla.nextInt();
+        int num;
+        
+        do{
+            System.out.print("Insira o número da conta (0-9): ");
+             num = tecla.nextInt();
+        
+        }while(ExistsConta(conta[num], num)<0);
+            
         System.out.print("Insira o saldo: ");
         double saldo = tecla.nextDouble();
-
+        
         conta[num] = new Conta(saldo);
         System.out.println("\nConta criada com sucesso...");
     }
     
     private static void consultarConta(){
-        System.out.print("Insira o número da conta (0-9): ");
-        int num = tecla.nextInt();
+        int num;
+        
+        do{
+            System.out.print("Insira o número da conta (0-9): ");
+             num = tecla.nextInt();
+        
+        }while(notExistsConta(conta[num], num)<0);
+        
         System.out.println("Saldo: "+conta[num].getSaldo());
     }
     
     private static void debitarConta(){
-        System.out.print("Insira o número da conta (0-9): ");
-        int num = tecla.nextInt();
+        int num;
+        
+        do{
+            System.out.print("Insira o número da conta (0-9): ");
+             num = tecla.nextInt();
+        
+        }while(notExistsConta(conta[num], num)<0);
+        
         System.out.print("Insira o valor a ser retirado: ");
         double valor = tecla.nextDouble();   
  
@@ -78,8 +96,14 @@ public class AV1_2 {
     }
 
     private static void creditarConta(){
-        System.out.print("Insira o número da conta (0-9): ");
-        int num = tecla.nextInt();
+        int num;
+        
+        do{
+            System.out.print("Insira o número da conta (0-9): ");
+             num = tecla.nextInt();
+        
+        }while(notExistsConta(conta[num], num)<0);
+        
         System.out.print("Insira o valor a ser depositado: ");
         double valor = tecla.nextDouble();   
  
@@ -88,10 +112,21 @@ public class AV1_2 {
     }
     
     private static void transfConta(){
-        System.out.print("Insira o número da conta origem (0-9): ");
-        int numOrig = tecla.nextInt();
-        System.out.print("Insira o número da conta destino (0-9): ");
-        int numDest = tecla.nextInt();
+                
+        int numOrig, numDest;
+        
+        do{
+            System.out.print("Insira o número da conta origem (0-9): ");
+             numOrig = tecla.nextInt();
+        
+        }while(notExistsConta(conta[numOrig], numOrig)<0);
+        
+        do{
+            System.out.print("Insira o número da conta destino (0-9): ");
+             numDest = tecla.nextInt();
+        
+        }while(notExistsConta(conta[numDest], numDest)<0);        
+        
         System.out.println("Insira o valor a ser transferido:");
         double valor = tecla.nextDouble();   
 
@@ -101,12 +136,33 @@ public class AV1_2 {
     }
     
     private static void excluirConta(){
-        System.out.print("Insira o número da conta (0-9): ");
-        int num = tecla.nextInt();
+        int num;
+        
+        do{
+            System.out.print("Insira o número da conta (0-9): ");
+             num = tecla.nextInt();
+        
+        }while(notExistsConta(conta[num], num)<0);
 
         conta[num]=null;
         System.out.println("Conta excluida com sucesso...");
     }
-    
-}
 
+    private static int notExistsConta(Conta c, int num){
+        if(c!=null)
+            if(num>=0 && num<10)
+                return 0;
+        
+        System.out.println("Conta não existente ou fora do limite...\n");
+        return -1;
+    }
+    
+    private static int ExistsConta(Conta c, int num){
+        if(c==null)
+            if(num>=0 && num<10)
+                return 0;
+        
+        System.out.println("Conta já existente ou fora do limite...\n");
+        return -1;
+    }
+}
