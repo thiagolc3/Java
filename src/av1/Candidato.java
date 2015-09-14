@@ -15,14 +15,6 @@ public class Candidato {
     private int numero;
     private int votos;
 
-    /*
-    public Candidato(String nome, int numero){
-        setNome(nome);
-        setNumero(numero);
-        setVotos(0);
-    }    
-    */
-
     public Candidato(String nome, int numero){
         this.nome=nome;
         this.numero=numero;

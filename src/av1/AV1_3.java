@@ -26,8 +26,9 @@ public class AV1_3 {
             System.out.println("\n\n*** ELEIÇÕES ***");
             System.out.println("1-Novo Candidato");
             System.out.println("2-Votar");
-            System.out.println("3-Relatório Parcial");
-            System.out.println("4-Sair");
+            System.out.println("3-Relatório Simples");
+            System.out.println("4-Relatório Completo (com porcentagem)");
+            System.out.println("5-Sair");
             System.out.println("**********************");
 
             
@@ -39,9 +40,10 @@ public class AV1_3 {
                 case 1: adicionar(); break;
                 case 2: votar(); break;
                 case 3: listar(); break;
-                case 4: break;
+                case 4: apurar(); break;
+                case 5: break;
             }
-        } while (op!=4);
+        } while (op!=5);
     }
 
     private static void adicionar(){
@@ -79,5 +81,19 @@ public class AV1_3 {
         for(int i=0; i<10; i++)
             if(candidato[i]!=null)
                 candidato[i].print();
+    }
+    
+    private static void apurar(){
+        int total=0;
+        
+        for(int i=0; i<10; i++)
+            if(candidato[i]!=null)
+                total+=candidato[i].getVotos();
+        
+        for(int i=0; i<10; i++)
+            if(candidato[i]!=null){
+                candidato[i].print();
+                System.out.println("percentual: "+candidato[i].getVotos()*100/total+'%');
+            }
     }
 }
