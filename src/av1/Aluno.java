@@ -21,10 +21,15 @@ public class Aluno {
     }
 
     public void printAluno(){
-        System.out.println("*************");
-        System.out.println("nome: " + this.nome);
-        System.out.println("matr: " + this.matricula);
-        System.out.println("av1: " + this.av1 + " av2: " + this.av2 + " media: " + getMedia());
+        System.out.println("*******************************");
+        System.out.println("nome: " + getNome());
+        System.out.println("matr: " + getMatricula());
+        System.out.println("av1: " + getAv1() + " av2: " + getAv2() + " média: " + getMedia());
+
+        if(getMedia()>=7)
+            System.out.println("situação: aprovado");
+        else
+            System.out.println("situação: reprovado");
     }
     
     public float getMedia(){
