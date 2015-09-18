@@ -17,8 +17,8 @@ public class AV1_7 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Banco banco1 = new Banco (1, "itaú");
-        Banco banco2 = new Banco (2, "bb");
+        Banco banco1 = new Banco (1, "Itaú");
+        Banco banco2 = new Banco (2, "BB");
         
         ContaCompleta conta1 = banco1.criaConta("Suzana");
         ContaCompleta conta2 = banco1.criaConta("Joana");

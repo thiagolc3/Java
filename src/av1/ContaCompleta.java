@@ -32,8 +32,8 @@ public class ContaCompleta {
     
     public void printConta(){
         System.out.println("**********************");
-        System.out.println("banco: " + pegaBanco().pegaNomeB());
-        System.out.println("código: " + pegaCodigo());
+        System.out.println("BANCO: " + pegaBanco().pegaNomeB()+ " / " + pegaBanco().pegaCodB());
+        System.out.println("código da conta: " + pegaCodigo());
         System.out.println("correntista: " + pegaNome());
         System.out.println("saldo: " + pegaSaldo());
     }
