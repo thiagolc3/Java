@@ -17,8 +17,8 @@ public class AV1_7 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Banco banco1 = new Banco (1, "itaú");
-        Banco banco2 = new Banco (2, "bb");
+        Banco banco1 = new Banco (1, "Itaú");
+        Banco banco2 = new Banco (2, "BB");
         
         ContaCompleta conta1 = banco1.criaConta("Suzana");
         ContaCompleta conta2 = banco1.criaConta("Joana");
@@ -26,7 +26,7 @@ public class AV1_7 {
         ContaCompleta conta3 = banco2.criaConta("Luis");
         ContaCompleta conta4 = banco2.criaConta("Maria");
         
-        System.out.println('\n');
+        System.out.println("Lista de contas criadas:");
         conta1.printConta();
         conta2.printConta();
         conta3.printConta();
@@ -36,12 +36,14 @@ public class AV1_7 {
         conta2.sacar(120);
         conta3.depositar(4000);
         conta4.sacar(50);
-        
-        System.out.println('\n');
+
+        System.out.println("\n\nLista de contas alteradas:");
         conta1.printConta();
         conta2.printConta();
         conta3.printConta();
         conta4.printConta();
+        
+        System.out.println("\n");
     }
     
 }
